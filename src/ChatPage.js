@@ -23,7 +23,7 @@ function ChatPage() {
     <div class="card" style={{ height: "100vh", overflow: "hidden" }}>
       {/* header */}
       <div
-        class="card-header fixed-top sticky-top d-block p-2 bg-primary text-white"
+        class="card-header fixed-top d-block p-2 bg-primary text-white"
         style={{ height: "5vh", backgroundColor: "blue" }}
       >
         <div class="d-flex flex-row bd-highlight mb-3">
