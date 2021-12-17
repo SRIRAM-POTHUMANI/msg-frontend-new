@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import './ChatPage.css';
+import "./ChatPage.css";
 import SpeakerNotesIcon from "@material-ui/icons/SpeakerNotes";
 import { InsertEmoticon, MicNone } from "@material-ui/icons";
 // import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 function ChatPage() {
-    const [input, setinput] = useState([]);
-    const sendMessage = async (e) => {
-      e.preventDefault();
-      // await axios.post("/messages/new", {
-        // message: input,
-        // name: name,
-        // toname: toName,
-        // timestamp: Date(),
-        // recieved: true,
-      // });
-      // setinput("");
-      // scrollToBottom();
-    };
+  const [input, setinput] = useState([]);
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    // await axios.post("/messages/new", {
+    // message: input,
+    // name: name,
+    // toname: toName,
+    // timestamp: Date(),
+    // recieved: true,
+    // });
+    // setinput("");
+    // scrollToBottom();
+  };
 
   return (
     <div class="card" style={{ height: "100vh", overflow: "hidden" }}>
@@ -323,31 +323,20 @@ function ChatPage() {
         </p>
       </div>
       <div
-        class="card-footer fixed-botto md-block bg-primary text-white"
+        class="card-footer fixed-bottom d-flex justify-content-between p-2 bd-highlight bg-primary text-white"
         style={{ height: "5vh", backgroundColor: "blue" }}
       >
-        <div class="d-flex flex-row bd-highlight mb-3">
-          <div class="bd-highlight">
-            <InsertEmoticon />
-          </div>
-          <div class="bd-highlight mx-auto chat_footer">
-            <form>
-              <input
-                value={input}
-                onChange={(e) => setinput(e.target.value)}
-                placeholder="Type a message"
-                type="text"
-              />
-              <button onClick={sendMessage} type="submit">
-                {" "}
-                send a message
-              </button>
-            </form>
-          </div>
-          <div class="bd-highlight">
-            <MicNone />
-          </div>
+        <InsertEmoticon style={{ marginRight: "5px" }} />
+        <div className="input-group flex-nowrap">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
         </div>
+        <MicNone style={{ marginLeft: "5px" }} />
       </div>
     </div>
   );
