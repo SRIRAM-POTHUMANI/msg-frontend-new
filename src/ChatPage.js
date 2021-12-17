@@ -38,7 +38,7 @@ function ChatPage() {
   };
   useEffect(async () => {
     await sync()
-    await scrollToBottom();
+    scrollToBottom();
   }, []);
 
 
