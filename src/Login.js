@@ -29,7 +29,7 @@ function Login() {
 
 
   return (
-    <div class="grid bady logapp">
+    <div className="grid bady logapp">
       <Card className="card" style={{ width: "20rem", textAlign: "center" }}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

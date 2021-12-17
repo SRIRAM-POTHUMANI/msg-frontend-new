@@ -99,9 +99,7 @@ export default function SimpleDialogDemo() {
     <div>
       {/* <Typography variant="subtitle1">Selected: {selectedValue}</Typography> */}
       {/* <br /> */}
-      <Button onClick={handleClickOpen}>
-        <SpeakerNotesIcon/>
-      </Button>
+      <SpeakerNotesIcon onClick={handleClickOpen} style={{ padding: "0px" }} />
       <SimpleDialog
         selectedValue={selectedValue}
         open={open}
