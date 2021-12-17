@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ChatPage.css";
 import CachedIcon from "@material-ui/icons/Cached";
-import SpeakerNotesIcon from "@material-ui/icons/SpeakerNotes";
 import SendIcon from "@material-ui/icons/Send";
-import { InsertEmoticon, MicNone } from "@material-ui/icons";
+import { InsertEmoticon } from "@material-ui/icons";
 import SimpleDialogDemo from "./SimpleDialogDemo";
-// import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import axios from "./axios";
 import jwt_decode from "jwt-decode";
 
@@ -19,7 +17,7 @@ function ChatPage() {
   const [username, setUsername] = useState("");
   const [recievername, setrecievername] = useState("");
   const [messages, setMessages] = useState([]);
-  const [userList, setuserList] = useState([]);
+  // const [userList, setuserList] = useState([]);
   // setUsername(existingUser);
   //set username
   // useEffect(async () => {
@@ -45,11 +43,11 @@ function ChatPage() {
 
 
   //fetch user list
-  const userlist = async () => {
-    await axios.get("/users/userlist").then((res) => {
-      setuserList(res.data);
-    });
-  };
+  // const userlist = async () => {
+  //   await axios.get("/users/userlist").then((res) => {
+  //     setuserList(res.data);
+  //   });
+  // };
 
   //scroll to bottom
   const messagesEndRef = useRef(null);
