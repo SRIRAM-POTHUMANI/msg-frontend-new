@@ -9,13 +9,13 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<ChatPage />} />
         </Routes>
         <Routes>
           <Route path="/reg" element={<RegisterUser />} />
         </Routes>
         <Routes>
-          <Route path="/chat" element={<ChatPage />} />
+          <Route path="/chat" element={<Login />} />
         </Routes>
       </Router>
     </div>
