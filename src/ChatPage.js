@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import './ChatPage.css';
 import SpeakerNotesIcon from "@material-ui/icons/SpeakerNotes";
+import { InsertEmoticon, MicNone } from "@material-ui/icons";
 // import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 function ChatPage() {
+    const [input, setinput] = useState([]);
+    const sendMessage = async (e) => {
+      e.preventDefault();
+      // await axios.post("/messages/new", {
+        // message: input,
+        // name: name,
+        // toname: toName,
+        // timestamp: Date(),
+        // recieved: true,
+      // });
+      // setinput("");
+      // scrollToBottom();
+    };
+
   return (
     <div class="card" style={{ height: "100vh", overflow: "hidden" }}>
       <div
@@ -13,10 +29,7 @@ function ChatPage() {
           <div class="p-0 bd-highlight">
             <SpeakerNotesIcon />
           </div>
-          <div class="p-0 bd-highlight mx-auto">
-            
-            Flex item 2
-          </div>
+          <div class="p-0 bd-highlight mx-auto">Flex item 2</div>
         </div>
       </div>
       <div class="card-body overflow-auto" style={{ height: "90vh" }}>
@@ -310,10 +323,31 @@ function ChatPage() {
         </p>
       </div>
       <div
-        class="card-footer fixed-bottom d-block p-2 bg-dark text-white"
+        class="card-footer fixed-botto md-block bg-primary text-white"
         style={{ height: "5vh", backgroundColor: "blue" }}
       >
-        2 days ago
+        <div class="d-flex flex-row bd-highlight mb-3">
+          <div class="bd-highlight">
+            <InsertEmoticon />
+          </div>
+          <div class="bd-highlight mx-auto chat_footer">
+            <form>
+              <input
+                value={input}
+                onChange={(e) => setinput(e.target.value)}
+                placeholder="Type a message"
+                type="text"
+              />
+              <button onClick={sendMessage} type="submit">
+                {" "}
+                send a message
+              </button>
+            </form>
+          </div>
+          <div class="bd-highlight">
+            <MicNone />
+          </div>
+        </div>
       </div>
     </div>
   );
